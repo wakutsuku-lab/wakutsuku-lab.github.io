@@ -19,10 +19,20 @@ test("contains the Wakutsuku brand and Japanese metadata", () => {
 });
 
 test("publishes a ten-page cluster without fabricated hands-on claims", () => {
-  assert.equal((articleData.match(/slug: "mobile-monitor-/g) ?? []).length, 9);
+  assert.equal((articleData.match(/slug: "mobile-monitor-/g) ?? []).length, 12);
   assert.match(clusterPage, /アフィリエイトリンクが含まれます/);
   assert.match(clusterPage, /rel="sponsored nofollow"/);
   assert.doesNotMatch(home + articleData + clusterPage, /使ってみた|実機レビュー|愛用/);
+});
+
+test("publishes official-source compatibility and troubleshooting guides", () => {
+  assert.match(articleData, /mobile-monitor-laptop-compatibility/);
+  assert.match(articleData, /mobile-monitor-cable-guide/);
+  assert.match(articleData, /mobile-monitor-troubleshooting/);
+  assert.match(clusterPage, /公式情報/);
+  assert.match(articleData, /displayport\.org/);
+  assert.match(articleData, /support\.microsoft\.com/);
+  assert.match(articleData, /support\.apple\.com/);
 });
 
 test("has affiliate-review and search-readiness pages", () => {

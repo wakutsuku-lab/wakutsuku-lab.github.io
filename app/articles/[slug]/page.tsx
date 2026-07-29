@@ -26,6 +26,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <h2>最終確認</h2>
       <p>購入前に、接続するPCのメーカー公式仕様と、商品の販売ページ・公式説明書を照合してください。端子の形だけでは映像出力や給電の可否を判断できません。</p>
       <a className="button" href={affiliateUrl} rel="sponsored nofollow">価格と最新仕様を確認 ↗</a>
+      {article.sources?.length ? <><h2>公式情報</h2><ul>{article.sources.map((source) => <li key={source.url}><a className="text-link" href={source.url} rel="noopener noreferrer">{source.label} ↗</a></li>)}</ul></> : null}
     </article>
     <footer><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU LAB</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">NOTICE</p><p>当サイトはアフィリエイト広告を利用しています。</p></div></div></footer>
   </main>;

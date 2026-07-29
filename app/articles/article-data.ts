@@ -4,11 +4,57 @@ export type Article = {
   conclusion: string;
   checks: { heading: string; body: string }[];
   avoid: string[];
+  sources?: { label: string; url: string }[];
 };
 
 export const affiliateUrl = "https://hb.afl.rakuten.co.jp/ichiba/56267716.35ae8522.56267717.6c98f125/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpuchirabbit%2F1-monitor-b-m156b15%2F";
 
 export const articles: Article[] = [
+  {
+    slug: "mobile-monitor-laptop-compatibility",
+    title: "ノートPCとモバイルモニターの互換性｜型番から確認する方法",
+    conclusion: "互換性はUSB-C端子の有無だけでは決まりません。ノートPCの正確な型番を確認し、メーカー公式仕様の映像出力、同時接続可能台数、対応解像度と、モニター側の入力・電源条件を照合します。",
+    checks: [
+      { heading: "PCの正確な型番", body: "同じシリーズ名でも世代や構成で端子仕様が異なる場合があります。本体表示やOSのシステム情報から型番を特定します。" },
+      { heading: "映像出力と台数", body: "メーカー公式仕様でDisplay SupportやVideo Support、DisplayPort Alt Mode、Thunderbolt、HDMIの記載と、外部画面の対応台数を確認します。" },
+      { heading: "解像度と給電", body: "PCが出せる解像度・リフレッシュレートと、モニターの入力・必要電力を照合します。端子の見た目だけでは判断しません。" },
+    ],
+    avoid: ["PCの型番を特定できない", "勤務先のPCで周辺機器利用ルールを確認できない"],
+    sources: [
+      { label: "VESA: DisplayPort over USB-C FAQ", url: "https://www.displayport.org/faq/" },
+      { label: "Apple: Connect external displays with your Mac", url: "https://support.apple.com/guide/mac-help/connect-an-external-display-mchl7c7ebe08/mac" },
+    ],
+  },
+  {
+    slug: "mobile-monitor-cable-guide",
+    title: "モバイルモニター用ケーブルの選び方｜USB-CとHDMIを整理",
+    conclusion: "USB-Cケーブルは外見が同じでも、映像・データ・給電の対応が同じとは限りません。製品付属ケーブルを優先し、交換時はモニターとPCが要求する映像方式・電力・端子をすべて満たすものを選びます。",
+    checks: [
+      { heading: "映像を運べるか", body: "USB-C接続ではDisplayPort Alt Mode等に対応するPC・モニター・ケーブルの組み合わせが必要です。充電専用ケーブルでは映像が出ません。" },
+      { heading: "必要電力を満たすか", body: "映像が出ても明るさ変更や安定動作に必要な給電が足りない場合があります。公式説明書の必要電力を確認します。" },
+      { heading: "HDMIの端子サイズ", body: "標準HDMI、mini HDMIなど、PCとモニター両側に合う端子を確認します。HDMI接続では別途USB給電が必要な場合があります。" },
+    ],
+    avoid: ["仕様が不明な手持ちケーブルだけで済ませたい", "付属ケーブルを持ち運べない"],
+    sources: [
+      { label: "VESA: DisplayPort Alt Mode for USB-C", url: "https://www.displayport.org/pr/vesa-brings-displayport-new-usb-type-c-connector/" },
+      { label: "Apple: Connect displays to your Mac", url: "https://support.apple.com/102555" },
+    ],
+  },
+  {
+    slug: "mobile-monitor-troubleshooting",
+    title: "モバイルモニターが映らない時の確認順｜Windows・Mac共通",
+    conclusion: "映らない時は、電源、入力端子、ケーブル、PCの表示設定の順に切り分けます。最初から製品故障と決めず、付属ケーブルと別ポートで最小構成を試してください。",
+    checks: [
+      { heading: "電源と物理接続", body: "モニターの電源、選択中の入力、ケーブルの差し込みを確認します。HDMI接続なら別給電の要否も確認します。" },
+      { heading: "表示モード", body: "WindowsではWindowsキー+Pで複製・拡張を確認します。Macではシステム設定のディスプレイを確認します。" },
+      { heading: "最小構成で切り分け", body: "ドックや変換器を外し、付属ケーブルでPCへ直接接続します。別ケーブル・別ポート・別PCで試せる場合は原因範囲を絞れます。" },
+    ],
+    avoid: ["焦げ臭い、異常発熱、破損がある状態で再接続する", "勤務先PCの設定を許可なく変更する"],
+    sources: [
+      { label: "Microsoft: Troubleshooting blank screens in Windows", url: "https://support.microsoft.com/windows/troubleshooting-blank-screens-in-windows-51ef7b96-47cb-b454-fcab-fac643784457" },
+      { label: "Apple: Connect displays to your Mac", url: "https://support.apple.com/102555" },
+    ],
+  },
   {
     slug: "mobile-monitor-usbc",
     title: "USB-Cでモバイルモニターが映らない原因｜購入前に見る3項目",
