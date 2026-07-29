@@ -15,6 +15,44 @@ export const affiliateOffers = [
 
 export const articles: Article[] = [
   {
+    slug: "mobile-monitor-windows-setup",
+    title: "Windowsでモバイルモニターを設定する方法｜拡張・配置・検出",
+    conclusion: "接続後はWindowsの「設定→システム→ディスプレイ」で画面を識別し、実際の机と同じ並びへ配置します。作業領域を増やすなら、Windowsキー+Pで「拡張」を選びます。",
+    checks: [
+      { heading: "画面を識別して並べる", body: "ディスプレイ設定の「識別」で番号を確認し、画面の配置をドラッグして机上の左右関係と合わせます。" },
+      { heading: "複製か拡張か", body: "同じ内容を映す場合は複製、別々のアプリを表示する場合は拡張を選びます。Windowsキー+Pから切り替えられます。" },
+      { heading: "検出と解像度", body: "表示されない場合は「複数のディスプレイ」の検出を試し、認識後に各画面の推奨解像度と拡大率を確認します。" },
+    ],
+    avoid: ["勤務先PCで外部画面や設定変更が禁止されている", "接続前の互換性をまだ確認していない"],
+    sources: [{ label: "Microsoft: Windowsで複数のモニターを使用する方法", url: "https://support.microsoft.com/ja-JP/Windows/Hardware/Display-Graphics/how-to-use-multiple-monitors-in-windows" }],
+  },
+  {
+    slug: "mobile-monitor-mac-setup",
+    title: "Macでモバイルモニターを使う前の確認と設定",
+    conclusion: "Macではモデルごとに外部ディスプレイの対応台数が異なります。接続前に技術仕様の「ディスプレイのサポート」を確認し、正しいポート・ケーブルで接続してから配置と拡張・ミラーリングを設定します。",
+    checks: [
+      { heading: "モデル別の対応台数", body: "Appleメニューのシステム情報から正確なモデルを特定し、Apple公式技術仕様で外部ディスプレイ対応台数を確認します。" },
+      { heading: "ポートとケーブル", body: "Thunderbolt、USB-C、HDMIは外観が似る場合があります。Macとモニターの双方に合う映像対応ケーブルを使います。" },
+      { heading: "配置と表示方法", body: "システム設定の「ディスプレイ」で配置、解像度、拡張またはミラーリングを選びます。" },
+    ],
+    avoid: ["Macのモデルと対応台数を確認できない", "必要なアダプターを増やしたくない"],
+    sources: [
+      { label: "Apple: Macで外部ディスプレイを接続する", url: "https://support.apple.com/ja-jp/guide/mac-help/-mchl7c7ebe08/mac" },
+      { label: "Apple: Macにディスプレイを接続する", url: "https://support.apple.com/ja-jp/102555" },
+    ],
+  },
+  {
+    slug: "mobile-monitor-needed",
+    title: "モバイルモニターはいらない？買う価値が出る条件を整理",
+    conclusion: "常設できる大画面があり、外へ持ち出さないならモバイルモニターを急いで買う必要はありません。一方、自宅と外出先の両方で二画面を使い、画面切替の時間を減らしたい人には候補になります。",
+    checks: [
+      { heading: "移動先でも二画面が必要か", body: "出張、共有オフィス、自宅内移動など、常設モニターを使えない場所で二画面が必要かを確認します。" },
+      { heading: "表示を分ける用途があるか", body: "会議と資料、表計算とブラウザーなど、同時表示したい具体的な組み合わせがある場合に価値が出ます。" },
+      { heading: "据え置き型より合うか", body: "同じ机だけで使うなら、より大きい据え置きモニターの価格・作業領域・安定性とも比較します。" },
+    ],
+    avoid: ["現在の一画面で不便がない", "外へ持ち出さず据え置きモニターを置ける", "ケーブルや機器を増やしたくない"],
+  },
+  {
     slug: "mobile-monitor-laptop-compatibility",
     title: "ノートPCとモバイルモニターの互換性｜型番から確認する方法",
     conclusion: "互換性はUSB-C端子の有無だけでは決まりません。ノートPCの正確な型番を確認し、メーカー公式仕様の映像出力、同時接続可能台数、対応解像度と、モニター側の入力・電源条件を照合します。",

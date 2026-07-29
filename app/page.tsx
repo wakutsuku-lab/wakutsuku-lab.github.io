@@ -6,8 +6,11 @@ export default function Home() {
     <header className="site-header shell"><a className="brand" href="#top"><span className="brand-mark">W</span>ワクツク研究所</a><nav><a href="#about">研究方針</a><a href="#articles">記事</a><Link href="/about">運営情報</Link><Link href="/contact">連絡先</Link></nav></header>
     <section className="hero" id="top"><img src="/wakutsuku-hero.png" alt="仕事道具を選ぶためのデスク風景"/><div className="hero-copy shell"><p className="eyebrow">WORKSTYLE × TOOLS</p><h1>仕事道具を選ぶ条件が、<br/>すぐわかる。</h1><p className="lead">仕様、互換性、価格、向いている用途。公式情報をもとに、買う前に確認したい条件をわかりやすく整理します。</p><Link className="button" href="/articles/mobile-monitor">モバイルモニターの選び方　↗</Link></div></section>
     <section className="manifesto shell" id="about"><p className="section-number">01 / POLICY</p><div className="policy"><h2>便利そう、で<br/>終わらせない。</h2><p>仕様、価格、相性、向いている人。買う前・使う前に知りたいことを整理し、判断できる材料として公開します。</p></div><div className="principles"><article><strong>01</strong><h3>実用から考える</h3><p>機能の多さではなく、日々の仕事がどう変わるかを見ます。</p></article><article><strong>02</strong><h3>条件を明記する</h3><p>検証日や情報源を示し、推測と確認済みの事実を分けます。</p></article><article><strong>03</strong><h3>合わない人も伝える</h3><p>おすすめだけでなく、買わない方がよい条件も掲載します。</p></article></div></section>
-    <section className="articles" id="articles"><div className="shell"><div className="section-heading"><div><p className="section-number">02 / ARTICLES</p><h2>モバイルモニター特集</h2></div><span>13 GUIDES</span></div>{[
+    <section className="articles" id="articles"><div className="shell"><div className="section-heading"><div><p className="section-number">02 / ARTICLES</p><h2>モバイルモニター特集</h2></div><span>16 GUIDES</span></div>{[
       ["/articles/mobile-monitor","仕事用モバイルモニターの選び方","接続、重さ、スタンド、保証を5分で確認"],
+      ["/articles/mobile-monitor-windows-setup","Windowsでの設定方法","拡張、配置、検出を公式手順で確認"],
+      ["/articles/mobile-monitor-mac-setup","Macでの確認と設定","対応台数、ポート、配置を確認"],
+      ["/articles/mobile-monitor-needed","本当に必要かを判断","買う価値が出る条件を具体化"],
       ["/articles/mobile-monitor-laptop-compatibility","PCとの互換性を確認","型番から映像出力と対応台数を照合"],
       ["/articles/mobile-monitor-cable-guide","ケーブルの選び方","USB-Cの映像・給電とHDMI端子を整理"],
       ["/articles/mobile-monitor-troubleshooting","映らない時の確認順","電源、接続、表示設定を順番に切り分け"],

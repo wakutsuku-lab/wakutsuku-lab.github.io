@@ -19,7 +19,7 @@ test("contains the Wakutsuku brand and Japanese metadata", () => {
 });
 
 test("publishes a ten-page cluster without fabricated hands-on claims", () => {
-  assert.equal((articleData.match(/slug: "mobile-monitor-/g) ?? []).length, 12);
+  assert.equal((articleData.match(/slug: "mobile-monitor-/g) ?? []).length, 15);
   assert.match(clusterPage, /アフィリエイトリンクが含まれます/);
   assert.match(clusterPage, /rel="sponsored nofollow"/);
   assert.equal((articleData.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length, 3);
@@ -35,6 +35,9 @@ test("publishes official-source compatibility and troubleshooting guides", () =>
   assert.match(articleData, /displayport\.org/);
   assert.match(articleData, /support\.microsoft\.com/);
   assert.match(articleData, /support\.apple\.com/);
+  assert.match(articleData, /mobile-monitor-windows-setup/);
+  assert.match(articleData, /mobile-monitor-mac-setup/);
+  assert.match(articleData, /mobile-monitor-needed/);
   assert.match(clusterPage, /generateMetadata/);
   assert.match(clusterPage, /application\/ld\+json/);
   assert.match(clusterPage, /関連記事/);
