@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://wakutsuku-lab.cnatgpt.chatgpt.site"),
   title: "ワクツク研究所｜仕事道具を選ぶ条件がわかる",
   description: "仕事道具の仕様、互換性、向いている条件を公式情報から整理するメディアです。",
   icons: { icon: "/favicon.svg" },

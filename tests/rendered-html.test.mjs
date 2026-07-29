@@ -7,6 +7,10 @@ const article = await readFile(new URL("../app/articles/mobile-monitor/page.tsx"
 const layout = await readFile(new URL("../app/layout.tsx", import.meta.url), "utf8");
 const articleData = await readFile(new URL("../app/articles/article-data.ts", import.meta.url), "utf8");
 const clusterPage = await readFile(new URL("../app/articles/[slug]/page.tsx", import.meta.url), "utf8");
+const advertisingPolicy = await readFile(new URL("../app/advertising-policy/page.tsx", import.meta.url), "utf8");
+const privacy = await readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8");
+const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
+const robots = await readFile(new URL("../app/robots.ts", import.meta.url), "utf8");
 
 test("contains the Wakutsuku brand and Japanese metadata", () => {
   assert.match(home, /ワクツク研究所/);
@@ -19,6 +23,14 @@ test("publishes a ten-page cluster without fabricated hands-on claims", () => {
   assert.match(clusterPage, /アフィリエイトリンクが含まれます/);
   assert.match(clusterPage, /rel="sponsored nofollow"/);
   assert.doesNotMatch(home + articleData + clusterPage, /使ってみた|実機レビュー|愛用/);
+});
+
+test("has affiliate-review and search-readiness pages", () => {
+  assert.match(advertisingPolicy, /広告であることを隠した掲載は行いません/);
+  assert.match(privacy, /現時点ではアクセス解析サービスを接続していません/);
+  assert.match(sitemap, /articles\.map/);
+  assert.match(robots, /sitemap\.xml/);
+  assert.match(home, /広告・アフィリエイト方針/);
 });
 
 test("publishes the first article with clear affiliate disclosure", () => {
