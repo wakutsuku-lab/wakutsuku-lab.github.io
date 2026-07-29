@@ -7,7 +7,11 @@ export type Article = {
   sources?: { label: string; url: string }[];
 };
 
-export const affiliateUrl = "https://hb.afl.rakuten.co.jp/ichiba/56267716.35ae8522.56267717.6c98f125/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpuchirabbit%2F1-monitor-b-m156b15%2F";
+export const affiliateOffers = [
+  { label: "標準仕様から選ぶ", name: "EVICIV G1 15.6型", condition: "FHD・非光沢IPS・自立スタンドを基準に比較したい人向け", url: "https://hb.afl.rakuten.co.jp/ichiba/56267716.35ae8522.56267717.6c98f125/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpuchirabbit%2F1-monitor-b-m156b15%2F" },
+  { label: "軽さとタッチで選ぶ", name: "kksmart CT-1 15.6型", condition: "掲載仕様の590gとタッチ対応を優先して比較したい人向け", url: "https://hb.afl.rakuten.co.jp/ichiba/56267772.35a9c187.56267773.08236aef/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fiikakakustore%2Fx0010yt551%2F" },
+  { label: "販売窓口で選ぶ", name: "サンワダイレクト DP-06", condition: "国内メーカー直販窓口とHDMI入力を重視して比較したい人向け", url: "https://hb.afl.rakuten.co.jp/ichiba/562677e4.510633e4.562677e5.45f47b91/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsanwadirect%2Fdp-06%2F" },
+];
 
 export const articles: Article[] = [
   {

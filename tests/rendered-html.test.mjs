@@ -22,6 +22,8 @@ test("publishes a ten-page cluster without fabricated hands-on claims", () => {
   assert.equal((articleData.match(/slug: "mobile-monitor-/g) ?? []).length, 12);
   assert.match(clusterPage, /アフィリエイトリンクが含まれます/);
   assert.match(clusterPage, /rel="sponsored nofollow"/);
+  assert.equal((articleData.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length, 3);
+  assert.match(clusterPage, /候補3製品の選び分け/);
   assert.doesNotMatch(home + articleData + clusterPage, /使ってみた|実機レビュー|愛用/);
 });
 
