@@ -1,4 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "仕事用モバイルモニターの選び方｜ワクツク研究所",
+  description: "接続互換性、給電、重量、スタンド、保証から仕事用モバイルモニターを選ぶ方法を整理します。",
+  alternates: { canonical: "/articles/mobile-monitor" },
+  openGraph: { title: "仕事用モバイルモニターの選び方", description: "購入前に確認する5項目を整理します。", type: "article", images: ["/og.png"] },
+};
 
 const products = [
   {label:"価格と基本仕様",name:"EVICIV G1 15.6型",body:"FHD、非光沢IPS、657g、自立スタンド、USB-C、mini HDMI。",url:"https://hb.afl.rakuten.co.jp/ichiba/56267716.35ae8522.56267717.6c98f125/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpuchirabbit%2F1-monitor-b-m156b15%2F"},

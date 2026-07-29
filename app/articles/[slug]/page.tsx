@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { affiliateOffers, articleBySlug, articles } from "../article-data";
 
@@ -6,12 +7,37 @@ export function generateStaticParams() {
   return articles.map(({ slug }) => ({ slug }));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const article = articleBySlug.get(slug);
+  if (!article) return {};
+  return {
+    title: `${article.title}｜ワクツク研究所`,
+    description: article.conclusion,
+    alternates: { canonical: `/articles/${slug}` },
+    openGraph: { title: article.title, description: article.conclusion, type: "article", images: ["/og.png"] },
+  };
+}
+
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = articleBySlug.get(slug);
   if (!article) notFound();
+  const related = articles.filter((candidate) => candidate.slug !== slug).slice(0, 3);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.conclusion,
+    datePublished: "2026-07-30",
+    dateModified: "2026-07-30",
+    author: { "@type": "Organization", name: "ワクツク研究所" },
+    publisher: { "@type": "Organization", name: "ワクツク研究所" },
+    mainEntityOfPage: `https://wakutsuku-lab.cnatgpt.chatgpt.site/articles/${slug}`,
+  };
 
   return <main className="article-page">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
     <header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク研究所</Link><Link href="/#articles">← 記事一覧へ</Link></header>
     <article className="prose shell">
       <p className="eyebrow">MOBILE MONITOR / 2026.07.30</p>
@@ -29,6 +55,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <p>購入前に、接続するPCのメーカー公式仕様と、商品の販売ページ・公式説明書を照合してください。端子の形だけでは映像出力や給電の可否を判断できません。</p>
       <a className="button" href={affiliateOffers[0].url} rel="sponsored nofollow">第一候補の価格と最新仕様を確認 ↗</a>
       {article.sources?.length ? <><h2>公式情報</h2><ul>{article.sources.map((source) => <li key={source.url}><a className="text-link" href={source.url} rel="noopener noreferrer">{source.label} ↗</a></li>)}</ul></> : null}
+      <h2>関連記事</h2><ul>{related.map((item) => <li key={item.slug}><Link className="text-link" href={`/articles/${item.slug}`}>{item.title}</Link></li>)}</ul>
     </article>
     <footer><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU LAB</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">NOTICE</p><p>当サイトはアフィリエイト広告を利用しています。</p></div></div></footer>
   </main>;

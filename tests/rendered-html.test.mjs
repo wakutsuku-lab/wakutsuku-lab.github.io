@@ -35,6 +35,9 @@ test("publishes official-source compatibility and troubleshooting guides", () =>
   assert.match(articleData, /displayport\.org/);
   assert.match(articleData, /support\.microsoft\.com/);
   assert.match(articleData, /support\.apple\.com/);
+  assert.match(clusterPage, /generateMetadata/);
+  assert.match(clusterPage, /application\/ld\+json/);
+  assert.match(clusterPage, /関連記事/);
 });
 
 test("has affiliate-review and search-readiness pages", () => {
