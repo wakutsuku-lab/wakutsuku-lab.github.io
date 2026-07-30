@@ -65,6 +65,7 @@ test("all 16 article pages disclose advertising and retain three affiliate optio
   for (const [route, html] of [...articlePages, ["/articles/mobile-monitor/", buyingGuide]]) {
     assert.match(html, /アフィリエイトリンクが含まれます/, route);
     assert.ok((html.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length >= 3, route);
+    assert.ok((html.match(/_RTLink139613/g) ?? []).length >= 3, route);
     assert.match(html, /rel="sponsored nofollow"/, route);
   }
 });

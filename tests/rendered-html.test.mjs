@@ -26,6 +26,7 @@ test("publishes a ten-page cluster without fabricated hands-on claims", () => {
   assert.match(clusterPage, /アフィリエイトリンクが含まれます/);
   assert.match(clusterPage, /rel="sponsored nofollow"/);
   assert.equal((articleData.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length, 3);
+  assert.equal((articleData.match(/_RTLink139613/g) ?? []).length, 3);
   assert.match(clusterPage, /候補3製品の選び分け/);
   assert.doesNotMatch(home + articleData + clusterPage, /使ってみた|実機レビュー|愛用/);
 });
@@ -58,6 +59,7 @@ test("publishes the first article with clear affiliate disclosure", () => {
   assert.match(article, /アフィリエイトリンクが含まれます/);
   assert.match(article, /rel="sponsored nofollow"/);
   assert.equal((article.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length, 3);
+  assert.equal((article.match(/_RTLink139613/g) ?? []).length, 3);
   assert.match(article, /買わない方がよい人/);
 });
 

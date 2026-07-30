@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const products = [
-  {label:"価格と基本仕様",name:"EVICIV G1 15.6型",body:"FHD、非光沢IPS、657g、自立スタンド、USB-C、mini HDMI。",url:"https://hb.afl.rakuten.co.jp/ichiba/56267716.35ae8522.56267717.6c98f125/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpuchirabbit%2F1-monitor-b-m156b15%2F"},
-  {label:"軽さとタッチ",name:"kksmart CT-1 15.6型",body:"FHD、非光沢IPS、590g、自立スタンド、タッチ、USB-C。",url:"https://hb.afl.rakuten.co.jp/ichiba/56267772.35a9c187.56267773.08236aef/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fiikakakustore%2Fx0010yt551%2F"},
-  {label:"販売窓口を重視",name:"サンワダイレクト DP-06",body:"15.6型、非光沢、自立スタンド、タッチ、USB-C、HDMI。",url:"https://hb.afl.rakuten.co.jp/ichiba/562677e4.510633e4.562677e5.45f47b91/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsanwadirect%2Fdp-06%2F"},
+  {label:"価格と基本仕様",name:"EVICIV G1 15.6型",body:"FHD、非光沢IPS、657g、自立スタンド、USB-C、mini HDMI。",url:"https://hb.afl.rakuten.co.jp/ichiba/56267716.35ae8522.56267717.6c98f125/_RTLink139613?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpuchirabbit%2F1-monitor-b-m156b15%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"},
+  {label:"軽さとタッチ",name:"kksmart CT-1 15.6型",body:"FHD、非光沢IPS、590g、自立スタンド、タッチ、USB-C。",url:"https://hb.afl.rakuten.co.jp/ichiba/56267772.35a9c187.56267773.08236aef/_RTLink139613?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fiikakakustore%2Fx0010yt551%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"},
+  {label:"販売窓口を重視",name:"サンワダイレクト DP-06",body:"15.6型、非光沢、自立スタンド、タッチ、USB-C、HDMI。",url:"https://hb.afl.rakuten.co.jp/ichiba/562677e4.510633e4.562677e5.45f47b91/_RTLink139613?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fsanwadirect%2Fdp-06%2F&link_type=hybrid_url&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJoeWJyaWRfdXJsIiwic2l6ZSI6IjI0MHgyNDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9"},
 ];
 const checks = [
   ["PCのUSB-C端子は映像を出せるか","USB-Cは端子の形であり、すべてが映像出力に対応するわけではありません。PCメーカーの仕様でDisplayPort Alt Mode、Thunderbolt、USB4の映像出力対応を確認します。"],
