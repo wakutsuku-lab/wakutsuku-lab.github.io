@@ -33,7 +33,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     dateModified: "2026-07-30",
     author: { "@type": "Organization", name: "ワクツク" },
     publisher: { "@type": "Organization", name: "ワクツク" },
-    mainEntityOfPage: `https://wakutsuku-lab.cnatgpt.chatgpt.site/articles/${slug}`,
+    mainEntityOfPage: `https://wakutsuku-lab.github.io/articles/${slug}/`,
   };
 
   return <main className="article-page">

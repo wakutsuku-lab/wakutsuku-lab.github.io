@@ -11,6 +11,8 @@ const advertisingPolicy = await readFile(new URL("../app/advertising-policy/page
 const privacy = await readFile(new URL("../app/privacy/page.tsx", import.meta.url), "utf8");
 const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "utf8");
 const robots = await readFile(new URL("../app/robots.ts", import.meta.url), "utf8");
+const nextConfig = await readFile(new URL("../next.config.ts", import.meta.url), "utf8");
+const pagesWorkflow = await readFile(new URL("../.github/workflows/pages.yml", import.meta.url), "utf8");
 
 test("contains the Wakutsuku brand and Japanese metadata", () => {
   assert.match(home, />ワクツク</);
@@ -57,4 +59,16 @@ test("publishes the first article with clear affiliate disclosure", () => {
   assert.match(article, /rel="sponsored nofollow"/);
   assert.equal((article.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length, 3);
   assert.match(article, /買わない方がよい人/);
+});
+
+test("is ready for the public GitHub Pages URL", () => {
+  const publicUrl = "https://wakutsuku-lab.github.io";
+  assert.match(layout, new RegExp(publicUrl.replaceAll(".", "\\.")));
+  assert.match(sitemap, new RegExp(publicUrl.replaceAll(".", "\\.")));
+  assert.match(robots, new RegExp(publicUrl.replaceAll(".", "\\.")));
+  assert.doesNotMatch(layout + sitemap + robots + clusterPage, /cnatgpt\.chatgpt\.site/);
+  assert.match(nextConfig, /output: "export"/);
+  assert.match(nextConfig, /trailingSlash: true/);
+  assert.match(pagesWorkflow, /actions\/deploy-pages@v4/);
+  assert.match(pagesWorkflow, /path: \.\/out/);
 });

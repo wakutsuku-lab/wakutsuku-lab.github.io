@@ -1,4 +1,30 @@
-# vinext-starter
+# ワクツク 公開サイト
+
+仕事道具の仕様・互換性・向いている条件を公式情報から整理する、ワクツクの公開メディアです。
+
+## 公開先
+
+- 一般公開URL: https://wakutsuku-lab.github.io
+- `main` ブランチへの反映後、GitHub Pagesへ自動公開します。
+
+## 確認コマンド
+
+```bash
+npm ci
+npm test
+npm run lint
+npm run build:pages
+```
+
+`npm run build:pages` の出力先は `out/` です。
+
+## Sites互換ビルド
+
+既存のOpenAI Sites向け構成も保持しており、`npm run build` で検証できます。
+
+---
+
+## 元の構成情報
 
 A clean full-stack starter running on
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and

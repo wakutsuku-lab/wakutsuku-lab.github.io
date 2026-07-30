@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { articles } from "./articles/article-data";
 
-const baseUrl = "https://wakutsuku-lab.cnatgpt.chatgpt.site";
+export const dynamic = "force-static";
+
+const baseUrl = "https://wakutsuku-lab.github.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/articles/mobile-monitor", ...articles.map(({ slug }) => `/articles/${slug}`), "/about", "/advertising-policy", "/privacy", "/contact"];
