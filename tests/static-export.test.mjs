@@ -73,7 +73,9 @@ test("all 16 article pages disclose advertising and retain three affiliate optio
 test("search metadata points only to the public origin", async () => {
   const robots = await readFile(new URL("../out/robots.txt", import.meta.url), "utf8");
   const sitemap = await readFile(new URL("../out/sitemap.xml", import.meta.url), "utf8");
+  const googleVerification = await readFile(new URL("../out/google584e1cee25c612f5.html", import.meta.url), "utf8");
   assert.match(robots, /https:\/\/wakutsuku-lab\.github\.io\/sitemap\.xml/);
   assert.equal((sitemap.match(/<url>/g) ?? []).length, 21);
+  assert.equal(googleVerification.trim(), "google-site-verification: google584e1cee25c612f5.html");
   assert.doesNotMatch(robots + sitemap + [...htmlByRoute.values()].join(""), /cnatgpt\.chatgpt\.site/);
 });
