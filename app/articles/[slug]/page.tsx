@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.title}｜ワクツク`,
     description: article.conclusion,
-    alternates: { canonical: `/articles/${slug}` },
-    openGraph: { title: article.title, description: article.conclusion, type: "article", images: ["/og.png"] },
+    alternates: { canonical: `/articles/${slug}/` },
+    openGraph: { title: article.title, description: article.conclusion, type: "article", url: `/articles/${slug}/`, images: ["/og.png"] },
   };
 }
 
@@ -24,16 +24,29 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = articleBySlug.get(slug);
   if (!article) notFound();
   const related = articles.filter((candidate) => candidate.slug !== slug).slice(0, 3);
+  const articleUrl = `https://wakutsuku-lab.github.io/articles/${slug}/`;
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: article.title,
-    description: article.conclusion,
-    datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
-    author: { "@type": "Organization", name: "ワクツク" },
-    publisher: { "@type": "Organization", name: "ワクツク" },
-    mainEntityOfPage: `https://wakutsuku-lab.github.io/articles/${slug}/`,
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: article.title,
+        description: article.conclusion,
+        datePublished: "2026-07-30",
+        dateModified: "2026-07-30",
+        author: { "@type": "Organization", name: "ワクツク", url: "https://wakutsuku-lab.github.io/" },
+        publisher: { "@type": "Organization", name: "ワクツク", url: "https://wakutsuku-lab.github.io/" },
+        mainEntityOfPage: articleUrl,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ワクツク", item: "https://wakutsuku-lab.github.io/" },
+          { "@type": "ListItem", position: 2, name: "モバイルモニター特集", item: "https://wakutsuku-lab.github.io/articles/mobile-monitor/" },
+          { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+        ],
+      },
+    ],
   };
 
   return <main className="article-page">

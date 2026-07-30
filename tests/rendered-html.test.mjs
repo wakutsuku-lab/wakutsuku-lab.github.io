@@ -44,6 +44,8 @@ test("publishes official-source compatibility and troubleshooting guides", () =>
   assert.match(articleData, /mobile-monitor-needed/);
   assert.match(clusterPage, /generateMetadata/);
   assert.match(clusterPage, /application\/ld\+json/);
+  assert.match(clusterPage, /BreadcrumbList/);
+  assert.match(clusterPage, /canonical: `\/articles\/\$\{slug\}\//);
   assert.match(clusterPage, /関連記事/);
 });
 
@@ -61,6 +63,14 @@ test("publishes the first article with clear affiliate disclosure", () => {
   assert.equal((article.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length, 3);
   assert.equal((article.match(/_RTLink139613/g) ?? []).length, 3);
   assert.match(article, /買わない方がよい人/);
+  assert.match(article, /BreadcrumbList/);
+  assert.match(article, /application\/ld\+json/);
+});
+
+test("publishes site identity and social-preview metadata", () => {
+  assert.match(home, /"@type": "WebSite"/);
+  assert.match(home, /"@type": "Organization"/);
+  assert.match(layout, /summary_large_image/);
 });
 
 test("is ready for the public GitHub Pages URL", () => {

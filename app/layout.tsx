@@ -11,6 +11,12 @@ export const metadata: Metadata = {
     description: "公式情報をもとに、仕事道具を選ぶ条件をわかりやすく整理します。",
     images: [{ url: "/og.png", width: 1736, height: 907, alt: "ワクツク モバイルモニター選び方ガイド" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "ワクツク｜仕事道具を選ぶ条件がわかる",
+    description: "公式情報をもとに、仕事道具を選ぶ条件をわかりやすく整理します。",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

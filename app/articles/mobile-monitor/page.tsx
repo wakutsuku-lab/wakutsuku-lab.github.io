@@ -4,8 +4,31 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "仕事用モバイルモニターの選び方｜ワクツク",
   description: "接続互換性、給電、重量、スタンド、保証から仕事用モバイルモニターを選ぶ方法を整理します。",
-  alternates: { canonical: "/articles/mobile-monitor" },
-  openGraph: { title: "仕事用モバイルモニターの選び方", description: "購入前に確認する5項目を整理します。", type: "article", images: ["/og.png"] },
+  alternates: { canonical: "/articles/mobile-monitor/" },
+  openGraph: { title: "仕事用モバイルモニターの選び方", description: "購入前に確認する5項目を整理します。", type: "article", url: "/articles/mobile-monitor/", images: ["/og.png"] },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: "仕事用モバイルモニターの選び方｜買う前の5分チェック",
+      description: "接続互換性、給電、重量、スタンド、保証から仕事用モバイルモニターを選ぶ方法を整理します。",
+      datePublished: "2026-07-29",
+      dateModified: "2026-07-30",
+      author: { "@type": "Organization", name: "ワクツク", url: "https://wakutsuku-lab.github.io/" },
+      publisher: { "@type": "Organization", name: "ワクツク", url: "https://wakutsuku-lab.github.io/" },
+      mainEntityOfPage: "https://wakutsuku-lab.github.io/articles/mobile-monitor/",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "ワクツク", item: "https://wakutsuku-lab.github.io/" },
+        { "@type": "ListItem", position: 2, name: "モバイルモニター特集", item: "https://wakutsuku-lab.github.io/articles/mobile-monitor/" },
+      ],
+    },
+  ],
 };
 
 const products = [
@@ -21,6 +44,7 @@ const checks = [
   ["保証と返品条件を確認する","保証期間だけでなく、初期不良の連絡期限、返品条件、ドット欠けの扱い、国内窓口の有無まで確認してください。"],
 ];
 export default function Article(){return <main className="article-page">
+  <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
   <header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク</Link><Link href="/">← ホームへ</Link></header>
   <article className="prose shell"><p className="eyebrow">WORK TOOLS / 2026.07.29</p><h1>仕事用モバイルモニターの選び方｜買う前の5分チェック</h1>
     <p className="disclosure"><strong>広告</strong>　本記事にはアフィリエイトリンクが含まれます。価格・在庫・仕様は販売ページで最新情報をご確認ください。</p>

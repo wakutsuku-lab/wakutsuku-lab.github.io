@@ -67,7 +67,17 @@ test("all 16 article pages disclose advertising and retain three affiliate optio
     assert.ok((html.match(/hb\.afl\.rakuten\.co\.jp/g) ?? []).length >= 3, route);
     assert.ok((html.match(/_RTLink139613/g) ?? []).length >= 3, route);
     assert.match(html, /rel="sponsored nofollow"/, route);
+    assert.match(html, /BreadcrumbList/, route);
+    assert.match(html, new RegExp(`<link rel="canonical" href="${publicOrigin}${route}"`), route);
   }
+});
+
+test("homepage declares the site and publisher identity", () => {
+  const home = htmlByRoute.get("/");
+  assert.ok(home);
+  assert.match(home, /"@type":"WebSite"/);
+  assert.match(home, /"@type":"Organization"/);
+  assert.match(home, /twitter:card/);
 });
 
 test("search metadata points only to the public origin", async () => {
