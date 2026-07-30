@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return <main>
-    <header className="site-header shell"><a className="brand" href="#top"><span className="brand-mark">W</span>ワクツク研究所</a><nav><a href="#about">研究方針</a><a href="#articles">記事</a><Link href="/about">運営情報</Link><Link href="/contact">連絡先</Link></nav></header>
+    <header className="site-header shell"><a className="brand" href="#top"><span className="brand-mark">W</span>ワクツク</a><nav><a href="#about">編集方針</a><a href="#articles">記事</a><Link href="/about">運営情報</Link><Link href="/contact">連絡先</Link></nav></header>
     <section className="hero" id="top"><img src="/wakutsuku-hero.png" alt="仕事道具を選ぶためのデスク風景"/><div className="hero-copy shell"><p className="eyebrow">WORKSTYLE × TOOLS</p><h1>仕事道具を選ぶ条件が、<br/>すぐわかる。</h1><p className="lead">仕様、互換性、価格、向いている用途。公式情報をもとに、買う前に確認したい条件をわかりやすく整理します。</p><Link className="button" href="/articles/mobile-monitor">モバイルモニターの選び方　↗</Link></div></section>
     <section className="manifesto shell" id="about"><p className="section-number">01 / POLICY</p><div className="policy"><h2>便利そう、で<br/>終わらせない。</h2><p>仕様、価格、相性、向いている人。買う前・使う前に知りたいことを整理し、判断できる材料として公開します。</p></div><div className="principles"><article><strong>01</strong><h3>実用から考える</h3><p>機能の多さではなく、日々の仕事がどう変わるかを見ます。</p></article><article><strong>02</strong><h3>条件を明記する</h3><p>検証日や情報源を示し、推測と確認済みの事実を分けます。</p></article><article><strong>03</strong><h3>合わない人も伝える</h3><p>おすすめだけでなく、買わない方がよい条件も掲載します。</p></article></div></section>
     <section className="articles" id="articles"><div className="shell"><div className="section-heading"><div><p className="section-number">02 / ARTICLES</p><h2>モバイルモニター特集</h2></div><span>16 GUIDES</span></div>{[

@@ -13,7 +13,8 @@ const sitemap = await readFile(new URL("../app/sitemap.ts", import.meta.url), "u
 const robots = await readFile(new URL("../app/robots.ts", import.meta.url), "utf8");
 
 test("contains the Wakutsuku brand and Japanese metadata", () => {
-  assert.match(home, /ワクツク研究所/);
+  assert.match(home, />ワクツク</);
+  assert.doesNotMatch(home + layout + article + clusterPage, /ワクツク研究所/);
   assert.match(home, /仕事道具を選ぶ条件が/);
   assert.match(layout, /lang="ja"/);
 });

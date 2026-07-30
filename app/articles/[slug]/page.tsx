@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const article = articleBySlug.get(slug);
   if (!article) return {};
   return {
-    title: `${article.title}｜ワクツク研究所`,
+    title: `${article.title}｜ワクツク`,
     description: article.conclusion,
     alternates: { canonical: `/articles/${slug}` },
     openGraph: { title: article.title, description: article.conclusion, type: "article", images: ["/og.png"] },
@@ -31,14 +31,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     description: article.conclusion,
     datePublished: "2026-07-30",
     dateModified: "2026-07-30",
-    author: { "@type": "Organization", name: "ワクツク研究所" },
-    publisher: { "@type": "Organization", name: "ワクツク研究所" },
+    author: { "@type": "Organization", name: "ワクツク" },
+    publisher: { "@type": "Organization", name: "ワクツク" },
     mainEntityOfPage: `https://wakutsuku-lab.cnatgpt.chatgpt.site/articles/${slug}`,
   };
 
   return <main className="article-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
-    <header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク研究所</Link><Link href="/#articles">← 記事一覧へ</Link></header>
+    <header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク</Link><Link href="/#articles">← 記事一覧へ</Link></header>
     <article className="prose shell">
       <p className="eyebrow">MOBILE MONITOR / 2026.07.30</p>
       <h1>{article.title}</h1>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function AdvertisingPolicyPage() {
-  return <main className="article-page"><header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク研究所</Link><Link href="/">← ホームへ</Link></header><article className="prose shell">
+  return <main className="article-page"><header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク</Link><Link href="/">← ホームへ</Link></header><article className="prose shell">
     <p className="eyebrow">ADVERTISING POLICY</p><h1>広告・アフィリエイト方針</h1>
     <p className="intro">当サイトはアフィリエイト広告を利用します。読者が当サイト経由で商品を購入・サービスへ申し込んだ場合、当サイトが紹介料を受け取ることがあります。</p>
     <h2>広告表示</h2><p>広告リンクを含む記事では、記事の冒頭に「広告」またはアフィリエイトリンクを含む旨を表示します。広告であることを隠した掲載は行いません。</p>

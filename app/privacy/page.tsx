@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function PrivacyPage() {
-  return <main className="article-page"><header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク研究所</Link><Link href="/">← ホームへ</Link></header><article className="prose shell">
+  return <main className="article-page"><header className="site-header shell"><Link className="brand" href="/"><span className="brand-mark">W</span>ワクツク</Link><Link href="/">← ホームへ</Link></header><article className="prose shell">
     <p className="eyebrow">PRIVACY</p><h1>プライバシーポリシー</h1><p>制定日: 2026年7月30日</p>
     <h2>取得する情報</h2><p>現在、当サイト独自の会員登録、コメント、問い合わせフォームは設置していません。メールでお問い合わせいただいた場合は、返信に必要なメールアドレスと本文を取り扱います。</p>
     <h2>アクセス解析</h2><p>現時点ではアクセス解析サービスを接続していません。導入時は、利用するサービス、取得項目、Cookie等の利用、拒否方法を本ページへ追記します。</p>

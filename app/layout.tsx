@@ -3,13 +3,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wakutsuku-lab.cnatgpt.chatgpt.site"),
-  title: "ワクツク研究所｜仕事道具を選ぶ条件がわかる",
+  title: "ワクツク｜仕事道具を選ぶ条件がわかる",
   description: "仕事道具の仕様、互換性、向いている条件を公式情報から整理するメディアです。",
   icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "ワクツク研究所｜仕事道具を選ぶ条件がわかる",
+    title: "ワクツク｜仕事道具を選ぶ条件がわかる",
     description: "公式情報をもとに、仕事道具を選ぶ条件をわかりやすく整理します。",
-    images: [{ url: "/og.png", width: 1736, height: 907, alt: "ワクツク研究所 モバイルモニター選び方ガイド" }],
+    images: [{ url: "/og.png", width: 1736, height: 907, alt: "ワクツク モバイルモニター選び方ガイド" }],
   },
 };
 
