@@ -53,6 +53,11 @@ export default function Article(){return <main className="article-page">
     <div className="product-grid">{products.map(p=><section key={p.name}><span>{p.label}</span><h3>{p.name}</h3><p>{p.body}</p><a href={p.url} rel="sponsored nofollow">楽天で候補を確認 ↗</a></section>)}</div>
     <h2>買う前の5分チェック</h2><div className="check-list">{checks.map(([title,body],i)=><section key={title}><b>{String(i+1).padStart(2,"0")}</b><div><h3>{title}</h3><p>{body}</p></div></section>)}</div>
     <h2>買わない方がよい人</h2><ul><li>同じ机でしか使わず、24型以上を置く場所がある</li><li>PCの端子仕様を確認できず、変換アダプターも使いたくない</li><li>厳密な色精度が必要だが、色域や校正の実測情報がない</li><li>現在の一画面でも困っておらず、荷物を増やしたくない</li></ul>
+    <h2>条件別に詳しく確認する</h2><ul>
+      <li><Link className="text-link" href="/articles/mobile-monitor-usbc/">USB-Cで映らない原因と購入前の確認項目</Link></li>
+      <li><Link className="text-link" href="/articles/mobile-monitor-size/">14型と15.6型を移動頻度から選ぶ方法</Link></li>
+      <li><Link className="text-link" href="/articles/mobile-monitor-weight/">本体以外の付属品を含めて重さを比べる方法</Link></li>
+    </ul>
     <h2>まとめ</h2><p>ランキング順位より接続互換性が先です。映像出力、給電、付属品込み重量、スタンド、保証の5点を確認すれば、候補を大きく絞れます。購入前に必ずリンク先で最新情報をご確認ください。</p>
-  </article><footer><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU LAB</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">CONTACT</p><a href="mailto:wakutsuku.lab@gmail.com">wakutsuku.lab@gmail.com</a></div></div></footer>
+  </article><footer><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">CONTACT</p><a href="mailto:wakutsuku.lab@gmail.com">wakutsuku.lab@gmail.com</a></div></div></footer>
 </main>}

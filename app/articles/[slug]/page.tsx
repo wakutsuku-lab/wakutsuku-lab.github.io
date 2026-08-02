@@ -70,6 +70,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       {article.sources?.length ? <><h2>公式情報</h2><ul>{article.sources.map((source) => <li key={source.url}><a className="text-link" href={source.url} rel="noopener noreferrer">{source.label} ↗</a></li>)}</ul></> : null}
       <h2>関連記事</h2><ul>{related.map((item) => <li key={item.slug}><Link className="text-link" href={`/articles/${item.slug}`}>{item.title}</Link></li>)}</ul>
     </article>
-    <footer><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU LAB</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">NOTICE</p><p>当サイトはアフィリエイト広告を利用しています。</p></div></div></footer>
+    <footer><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">NOTICE</p><p>当サイトはアフィリエイト広告を利用しています。</p></div></div></footer>
   </main>;
 }
