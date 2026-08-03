@@ -29,7 +29,7 @@ export default function Home() {
     <header className="site-header shell"><a className="brand" href="#top"><span className="brand-mark">W</span>ワクツク</a><nav><a href="#about">編集方針</a><a href="#articles">記事</a><Link href="/about">運営情報</Link><Link href="/contact">連絡先</Link></nav></header>
     <section className="hero" id="top"><img src="/wakutsuku-hero.png" alt="仕事道具を選ぶためのデスク風景"/><div className="hero-copy shell"><p className="eyebrow">WORKSTYLE × TOOLS</p><h1>仕事道具を選ぶ条件が、<br/>すぐわかる。</h1><p className="lead">仕様、互換性、価格、向いている用途。公式情報をもとに、買う前に確認したい条件をわかりやすく整理します。</p><Link className="button" href="/articles/mobile-monitor">モバイルモニターの選び方　↗</Link></div></section>
     <section className="manifesto shell" id="about"><p className="section-number">01 / POLICY</p><div className="policy"><h2>便利そう、で<br/>終わらせない。</h2><p>仕様、価格、相性、向いている人。買う前・使う前に知りたいことを整理し、判断できる材料として公開します。</p></div><div className="principles"><article><strong>01</strong><h3>実用から考える</h3><p>機能の多さではなく、日々の仕事がどう変わるかを見ます。</p></article><article><strong>02</strong><h3>条件を明記する</h3><p>検証日や情報源を示し、推測と確認済みの事実を分けます。</p></article><article><strong>03</strong><h3>合わない人も伝える</h3><p>おすすめだけでなく、買わない方がよい条件も掲載します。</p></article></div></section>
-    <section className="articles" id="articles"><div className="shell"><div className="section-heading"><div><p className="section-number">02 / ARTICLES</p><h2>モバイルモニター特集</h2></div><span>16 GUIDES</span></div>{[
+    <section className="articles" id="articles"><div className="shell"><div className="section-heading"><div><p className="section-number">02 / ARTICLES</p><h2>モバイルモニター特集</h2></div><span>19 GUIDES</span></div>{[
       ["/articles/mobile-monitor","仕事用モバイルモニターの選び方","接続、重さ、スタンド、保証を5分で確認"],
       ["/articles/mobile-monitor-windows-setup","Windowsでの設定方法","拡張、配置、検出を公式手順で確認"],
       ["/articles/mobile-monitor-mac-setup","Macでの確認と設定","対応台数、ポート、配置を確認"],
@@ -46,6 +46,9 @@ export default function Home() {
       ["/articles/mobile-monitor-vertical","縦置きで使う条件","スタンド、端子、画面回転を確認"],
       ["/articles/mobile-monitor-remote-work","在宅勤務を二画面にする","机、用途、会社PCの条件で選ぶ"],
       ["/articles/mobile-monitor-travel","出張用の選び方","総重量、収納、現地の接続で比較"],
+      ["/articles/mobile-monitor-vs-desktop","据え置き型との違い","机、収納、移動頻度から選ぶ"],
+      ["/articles/mobile-monitor-dual-display","2台接続する前の確認","PCの出力上限、映像経路、給電を整理"],
+      ["/articles/mobile-monitor-ipad","iPadとの接続条件","モデル、表示方法、ケーブルを確認"],
     ].map(([href,title,description], index)=><Link className="article-card" href={href} key={href}><div className="article-visual"><span>BUYING GUIDE</span><b>{index+1}</b><small>MOBILE MONITOR</small></div><div className="article-copy"><p className="tags">#モバイルモニター　#仕事道具</p><h3>{title}</h3><p>{description}</p><span className="text-link">記事を読む →</span></div></Link>)}</div></section>
     <footer id="contact"><div className="shell footer-grid"><div><p className="footer-brand">WAKUTSUKU</p><p>選ぶ条件を、わかりやすく。</p></div><div><p className="footer-label">INFORMATION</p><p><Link href="/about">運営情報</Link><br/><Link href="/advertising-policy">広告・アフィリエイト方針</Link><br/><Link href="/privacy">プライバシーポリシー</Link><br/><Link href="/contact">お問い合わせ</Link></p></div><div><p className="footer-label">NOTICE</p><p>当サイトはアフィリエイト広告を利用しています。</p></div></div><div className="shell copyright">© 2026 WAKUTSUKU</div></footer>
   </main>;

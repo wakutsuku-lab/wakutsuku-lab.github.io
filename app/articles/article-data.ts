@@ -4,6 +4,7 @@ export type Article = {
   conclusion: string;
   checks: { heading: string; body: string }[];
   avoid: string[];
+  publishedAt?: string;
   sources?: { label: string; url: string }[];
 };
 
@@ -195,6 +196,51 @@ export const articles: Article[] = [
       { heading: "現地での接続", body: "補助電源が必要な場合は、コンセント数と電源アダプターも準備します。" },
     ],
     avoid: ["移動中の荷物を最小化したい", "短時間の作業しかせず二画面の必要性が低い"],
+  },
+  {
+    slug: "mobile-monitor-vs-desktop",
+    publishedAt: "2026-08-03",
+    title: "モバイルモニターと据え置きモニターの違い｜机と移動頻度で選ぶ",
+    conclusion: "同じ机だけで使うなら大きく安定した据え置き型、片付けや持ち運びが必要ならモバイル型が候補です。先に使用場所と移動頻度を決め、画面サイズより設置条件から比較します。",
+    checks: [
+      { heading: "使用場所を一つに決める", body: "毎日同じ机で使うのか、自宅内で片付けるのか、外出先へ持ち出すのかを決めます。移動しないなら携帯性へ費用をかける必要性は下がります。" },
+      { heading: "机の幅と奥行きを測る", body: "ノートPCと並べた幅だけでなく、スタンドを開いた奥行き、ケーブルの向き、使わない時の収納場所まで確認します。" },
+      { heading: "二画面の使い方を決める", body: "Windowsでは複製と拡張を選べます。資料と会議画面など別々の内容を表示するなら、拡張時の配置と見やすさを基準にします。" },
+    ],
+    avoid: ["常設できる机と大きい画面を置く余裕がある", "外出先で二画面を使わない", "毎回の設置とケーブル接続を避けたい"],
+    sources: [{ label: "Microsoft: Windowsで複数のモニターを使用する方法", url: "https://support.microsoft.com/ja-JP/Windows/Hardware/Display-Graphics/how-to-use-multiple-monitors-in-windows" }],
+  },
+  {
+    slug: "mobile-monitor-dual-display",
+    publishedAt: "2026-08-03",
+    title: "モバイルモニターを2台つなぐ前の確認｜PCの出力上限と給電",
+    conclusion: "端子が二つあっても、外部画面を二台同時に出せるとは限りません。PCの正確な型番から対応台数と解像度を確認し、各画面の映像経路と給電を一台ずつ組み立てます。",
+    checks: [
+      { heading: "外部画面の対応台数", body: "PCメーカーの技術仕様で、外部ディスプレイの対応台数、解像度、リフレッシュレートを確認します。シリーズ名ではなく正確な型番で照合します。" },
+      { heading: "映像経路を分ける", body: "USB-C、Thunderbolt、USB4、HDMIのどこから映像を出すかを一台ずつ決めます。ドックを使う場合も、ドックとPC双方の表示上限を確認します。" },
+      { heading: "二台分の給電", body: "HDMI接続では別給電が必要な場合があります。二台のモニター、PC、ドックへ必要な電力を同時に供給できるかを公式仕様で確認します。" },
+    ],
+    avoid: ["PCの型番と外部画面の対応台数を確認できない", "勤務先PCでドックや複数画面の利用許可がない", "電源やケーブルを増やしたくない"],
+    sources: [
+      { label: "Microsoft: Windowsで複数のモニターを使用する方法", url: "https://support.microsoft.com/ja-JP/Windows/Hardware/Display-Graphics/how-to-use-multiple-monitors-in-windows" },
+      { label: "Apple: Macにディスプレイを接続する", url: "https://support.apple.com/ja-jp/102555" },
+    ],
+  },
+  {
+    slug: "mobile-monitor-ipad",
+    publishedAt: "2026-08-03",
+    title: "iPadを外部モニターにつなぐ前の確認｜USB-C・表示方法・給電",
+    conclusion: "iPadはモデルと接続方法によって、画面のミラーリング、対応アプリのセカンドスクリーン、拡張表示の可否が異なります。モデルを特定し、Apple公式の対応表示と必要なケーブルを先に確認します。",
+    checks: [
+      { heading: "iPadのモデルと端子", body: "USB-C搭載モデルか、別のアダプターが必要なモデルかを確認します。同じiPad名でも世代によって端子と表示機能が異なります。" },
+      { heading: "表示方法を確認", body: "接続時にミラーリングになるか、対応アプリのセカンドスクリーンになるか、拡張表示へ対応するかをApple公式情報で確認します。" },
+      { heading: "ケーブルと給電", body: "高解像度表示には対応帯域を満たす映像用ケーブルが必要です。モニター側の入力と電源条件も照合し、充電用ケーブルだけで判断しません。" },
+    ],
+    avoid: ["iPadのモデルを特定できない", "画面を増やして何を表示するか決まっていない", "アダプターや補助電源を持ち歩きたくない"],
+    sources: [
+      { label: "Apple: iPadのUSB-Cポートで充電・接続する", url: "https://support.apple.com/ja-jp/108894" },
+      { label: "Apple: ケーブルを使ってiPadをディスプレイに接続する", url: "https://support.apple.com/ja-jp/guide/ipad/-ipadf1276cde/ipados" },
+    ],
   },
 ];
 

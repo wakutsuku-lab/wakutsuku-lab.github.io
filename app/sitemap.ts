@@ -7,5 +7,5 @@ const baseUrl = "https://wakutsuku-lab.github.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/articles/mobile-monitor", ...articles.map(({ slug }) => `/articles/${slug}`), "/about", "/advertising-policy", "/privacy", "/contact"];
-  return routes.map((route) => ({ url: `${baseUrl}${route}`, lastModified: new Date("2026-07-30"), changeFrequency: route.startsWith("/articles/") ? "weekly" : "monthly", priority: route === "" ? 1 : route.startsWith("/articles/") ? 0.8 : 0.4 }));
+  return routes.map((route) => ({ url: `${baseUrl}${route}`, lastModified: new Date("2026-08-03"), changeFrequency: route.startsWith("/articles/") ? "weekly" : "monthly", priority: route === "" ? 1 : route.startsWith("/articles/") ? 0.8 : 0.4 }));
 }
