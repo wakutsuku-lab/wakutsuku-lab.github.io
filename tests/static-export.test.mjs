@@ -36,7 +36,7 @@ function routeForHref(href) {
 }
 
 test("exports the complete public site", () => {
-  assert.equal(htmlFiles.length, 23);
+  assert.equal(htmlFiles.length, 26);
   assert.ok(htmlByRoute.has("/"));
   assert.ok(htmlByRoute.has("/about/"));
   assert.ok(htmlByRoute.has("/advertising-policy/"));
@@ -56,10 +56,10 @@ test("every internal page link resolves in the export", () => {
   assert.deepEqual(missing, []);
 });
 
-test("all 16 article pages disclose advertising and retain three affiliate options", () => {
+test("all 19 article pages disclose advertising and retain three affiliate options", () => {
   const articlePages = [...htmlByRoute]
     .filter(([route]) => route.startsWith("/articles/") && route !== "/articles/mobile-monitor/");
-  assert.equal(articlePages.length, 15);
+  assert.equal(articlePages.length, 18);
   const buyingGuide = htmlByRoute.get("/articles/mobile-monitor/");
   assert.ok(buyingGuide);
   for (const [route, html] of [...articlePages, ["/articles/mobile-monitor/", buyingGuide]]) {
@@ -85,7 +85,7 @@ test("search metadata points only to the public origin", async () => {
   const sitemap = await readFile(new URL("../out/sitemap.xml", import.meta.url), "utf8");
   const googleVerification = await readFile(new URL("../out/google584e1cee25c612f5.html", import.meta.url), "utf8");
   assert.match(robots, /https:\/\/wakutsuku-lab\.github\.io\/sitemap\.xml/);
-  assert.equal((sitemap.match(/<url>/g) ?? []).length, 21);
+  assert.equal((sitemap.match(/<url>/g) ?? []).length, 24);
   assert.equal(googleVerification.trim(), "google-site-verification: google584e1cee25c612f5.html");
   assert.doesNotMatch(robots + sitemap + [...htmlByRoute.values()].join(""), /cnatgpt\.chatgpt\.site/);
 });
